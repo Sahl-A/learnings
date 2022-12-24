@@ -1,0 +1,66 @@
+helm repo list
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm repo list
+
+helm repo remove bitnami
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+
+Search the repository:
+
+helm search repo mysql
+
+helm search repo database
+
+helm search repo database --versions
+
+
+Install a package:
+
+kubectl get pods
+
+(Below Two commands - In a Different Shell/Commandline window/tab)
+
+minikube ssh
+
+docker images
+
+helm install mydb bitnami/mysql
+
+
+Check the cluster:
+
+kubectl get pods
+
+minikube ssh
+
+docker images
+
+To check the installation status:
+
+helm status mydb
+
+
+
+--------------------------------------------
+
+To Upgrade:
+
+ROOT_PASSWORD=$(kubectl get secret --namespace default mydb-mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode)
+
+helm upgrade --namespace default mydb bitnami/mysql --set auth.rootPassword=$ROOT_PASSWORD
+
+// with dry run, it will generate the yaml files only without applying them 
+helm upgrade --namespace default mydb bitnami/mysql --set auth.rootPassword=$ROOT_PASSWORD --dry-run
+
+-------
+
+helm uninstall mydb
+
+-----
+for captain finances in corp env
+`helm updgrade DEPLOYMENT_NAME PATH_TO_CHARTS -f PATH_TO_VALUES_FILE --namespace NAMESPACE`
+`helm upgrade supp-captain-finances ./chart/captain-finances -f chart/captain-finances/values-dev.yaml --debug --namespace dev-supp`

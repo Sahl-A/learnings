@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpaca-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      ver: "1"
+      app: alpaca
+      env: prod
+  template:
+    metadata:
+      annotations:
+        kubernetes.io/change-cause: "Update to green kuard"
+      labels:
+        ver: "1"
+        app: alpaca
+        env: prod
+    spec:
+      containers:
+      - name: kuar-demo
+        image: gcr.io/kuar-demo/kuard-amd64:green
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          periodSeconds: 2
+          initialDelaySeconds: 0
+          failureThreshold: 3
+          successThreshold: 1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

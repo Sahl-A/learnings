@@ -1,0 +1,1 @@
+This project is hands on for introduction to nginx by hussein nasser on udemy

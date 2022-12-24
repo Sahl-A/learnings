@@ -1,0 +1,9 @@
+{
+  "name": "network-nodejs",
+  "engines": {
+    "node": "v12.22.7"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,101 @@
+[34m
+* Datadog Agent install script v1.7.1
+[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 http://ppa.launchpad.net/maarten-fonville/android-studio/ubuntu focal InRelease
+Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:4 https://cli.github.com/packages stable InRelease
+Hit:5 http://eg.archive.ubuntu.com/ubuntu focal InRelease
+Hit:6 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:7 https://packages.cloud.google.com/apt cloud-sdk InRelease
+Hit:8 http://ppa.launchpad.net/obsproject/obs-studio/ubuntu focal InRelease
+Hit:9 https://baltocdn.com/helm/stable/debian all InRelease
+Ign:10 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease
+Hit:11 http://packages.microsoft.com/repos/code stable InRelease
+Hit:12 https://deb.nodesource.com/node_14.x focal InRelease
+Get:13 http://eg.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Hit:14 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release
+Get:17 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40.7 kB]
+Get:18 http://eg.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Hit:19 https://repo.fortinet.com/repo/6.4/ubuntu /bionic InRelease
+Get:20 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [66.6 kB]
+Get:21 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]
+Get:22 http://eg.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [605 kB]
+Hit:16 https://packagecloud.io/datawireio/telepresence/ubuntu focal InRelease
+Get:23 http://eg.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1,581 kB]
+Get:24 http://eg.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [280 kB]
+Get:25 http://eg.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [904 kB]
+Get:26 http://eg.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [668 kB]
+Get:27 http://eg.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [390 kB]
+Get:28 http://eg.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Get:29 http://eg.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7,980 B]
+Get:30 http://eg.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [23.7 kB]
+Fetched 4,905 kB in 7s (744 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.68.0-1ubuntu2.7).
+gnupg is already the newest version (2.2.19-3ubuntu2.1).
+apt-transport-https is already the newest version (2.0.6).
+The following packages were automatically installed and are no longer required:
+  lib32gcc-s1 lib32gcc1 lib32stdc++6 lib32z1 libc6-i386
+  linux-headers-5.13.0-27-generic linux-hwe-5.13-headers-5.13.0-27
+  linux-image-5.13.0-27-generic linux-modules-5.13.0-27-generic
+  linux-modules-extra-5.13.0-27-generic python3-crcmod
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 51 not upgraded.
+[34m
+* Installing APT package sources for Datadog
+[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  28665      0 --:--:-- --:--:-- --:--:-- 28574
+gpg: directory '/root/.gnupg' created
+gpg: /root/.gnupg/trustdb.gpg: trustdb created
+gpg: key D3A80E30382E94DE: public key "Datadog, Inc <package@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  19828      0 --:--:-- --:--:-- --:--:-- 19828
+gpg: key 32637D44F14F620E: public key "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  28484      0 --:--:-- --:--:-- --:--:-- 28484
+gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+[34m
+* Installing the Datadog Agent package
+[0m
+Ign:1 https://apt.datadoghq.com stable InRelease
+Get:2 https://apt.datadoghq.com stable Release [9,927 B]
+Get:3 https://apt.datadoghq.com stable Release.gpg [801 B]
+Get:4 https://apt.datadoghq.com stable/7 all Packages [736 B]
+Get:5 https://apt.datadoghq.com stable/7 i386 Packages [736 B]
+Get:6 https://apt.datadoghq.com stable/7 amd64 Packages [17.6 kB]
+Fetched 29.8 kB in 1s (31.8 kB/s)
+Reading package lists...
+  [33mInstalling package: datadog-agent
+[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  lib32gcc-s1 lib32gcc1 lib32stdc++6 lib32z1 libc6-i386
+  linux-headers-5.13.0-27-generic linux-hwe-5.13-headers-5.13.0-27
+  linux-image-5.13.0-27-generic linux-modules-5.13.0-27-generic
+  linux-modules-extra-5.13.0-27-generic python3-crcmod
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  datadog-agent datadog-signing-keys
+0 upgraded, 2 newly installed, 0 to remove and 51 not upgraded.
+Need to get 242 MB of archives.
+After this operation, 803 MB of additional disk space will be used.
+Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.33.1-1 [242 MB]

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "i18next": "^21.6.5",
+    "i18next-express-middleware": "^2.0.0",
+    "i18next-node-fs-backend": "^2.1.3"
+  }
+}

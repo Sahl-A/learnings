@@ -1,0 +1,13 @@
+{
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "4.7.0",
+    "dotenv": "^10.0.0",
+    "micro": "^9.3.4",
+    "winston": "^3.3.3",
+    "winston-bigquery": "^1.4.0"
+  },
+  "scripts": {
+    "start": "micro -l tcp://0.0.0.0:${PORT-3001}"
+  }
+}
